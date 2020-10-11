@@ -627,9 +627,8 @@ specifying complex expressions.
 
 sumLast2 :: Int -> Int
 sumLast2 n =
-  let last2Digits = mod (abs n) 100
-      tens = quot last2Digits 10
-   in tens + (lastDigit last2Digits)
+  let (first, second) = divMod (mod (abs n) 100) 10
+   in first + second
 
 {- |
 =💣= Task 10*
